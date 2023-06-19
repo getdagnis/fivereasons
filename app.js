@@ -8,9 +8,6 @@ function letsBegin() {
   const header = document.querySelector('.header-container');
   const heroTitle = document.getElementById('hero-title');
 
-  const heroTitleContent = `<span class="fade-down delay-1">Tastes fantastic.</span><br /><span class="fade-down delay-2">Backed by science.</span>`;
-  const heroButtonContent = `Shop now <div class="button-arrow"><span class="button-arrow-head"></span></div>`;
-
   if (sessionStorage.getItem('visited') === null) {
     document.documentElement.style.setProperty('--additionalDelay', '3s');
     sessionStorage.setItem('visited', 'true');
@@ -35,21 +32,55 @@ function letsBegin() {
     preloadModal.remove();
   }
 
-  function handleClick() {
-    heroImage.style.backgroundPositionX = 'right';
-    heroRight.style.opacity = '0';
+  let currentSlide = 0;
+  const currentSlideData = [
+    {
+      bgColor: 'rgba(201, 150, 197, 0.5)',
+      bgPos: 'center',
+      bgImg: "url('/assets/cut_brain_bliss.png')",
+      backgroundPositionX: 'left',
+      heroTitleContent: `<span class="fade-down delay-1">Fuel your body.</span><br /><span class="fade-down delay-2">Fuel your life.</span>`,
+      heroButtonContent: `Learn more <div class="button-arrow"><span class="button-arrow-head"></span></div>`,
+    },
+    {
+      bgColor: 'rgba(148, 183, 148, 0.5)',
+      bgPos: 'bottom',
+      bgImg: "url('/assets/cut_green.png')",
+      backgroundPositionX: 'right',
+      heroTitleContent: `<span class="fade-down delay-1">Tastes fantastic.</span><br /><span class="fade-down delay-2">Backed by science.</span>`,
+      heroButtonContent: `Shop now <div class="button-arrow"><span class="button-arrow-head"></span></div>`,
+    },
+    {
+      bgColor: 'rgba(148, 183, 148, 0.5)',
+      bgPos: 'bottom',
+      bgImg: "url('/assets/five_icon_600.png')",
+      backgroundPositionX: 'right',
+      heroTitleContent: `<span class="fade-down delay-1">Shop can open here.</span><br /><span class="fade-down delay-2">In a seperate page.</span>`,
+      heroButtonContent: `Go back <div class="button-arrow"><span class="button-arrow-head"></span></div>`,
+    },
+  ];
+
+  function handleHeroButtonClick() {
+    if (currentSlide === 2) {
+      currentSlide = 0;
+    } else {
+      currentSlide++;
+    }
+
     document.documentElement.style.setProperty('--additionalDelay', '0s');
+    heroRight.style.opacity = '0';
+    heroImage.style.backgroundPositionX = currentSlideData[currentSlide].backgroundPositionX;
 
     setTimeout(() => {
       heroRight.style.opacity = '1';
-      heroRight.style.backgroundImage = "url('/assets/cut_green.png')";
-      heroRight.style.backgroundPosition = 'bottom';
-      header.style.backgroundColor = 'rgba(148, 183, 148, 0.5)';
-      heroTitle.innerHTML = heroTitleContent;
-      heroButton.innerHTML = heroButtonContent;
-      heroButton.removeEventListener('click', handleClick);
-    }, 300);
+      heroRight.style.backgroundImage = currentSlideData[currentSlide].bgImg;
+      heroRight.style.backgroundPosition = currentSlideData[currentSlide].bgPos;
+      header.style.backgroundColor = currentSlideData[currentSlide].bgColor;
+      heroTitle.innerHTML = currentSlideData[currentSlide].heroTitleContent;
+      heroButton.innerHTML = currentSlideData[currentSlide].heroButtonContent;
+      // heroButton.removeEventListener('click', handleClick);
+    }, 400);
   }
 
-  heroButton.addEventListener('click', handleClick);
+  heroButton.addEventListener('click', handleHeroButtonClick);
 }

@@ -26,12 +26,19 @@ function letsBegin() {
     }, 2000);
   } else {
     document.body.classList.remove('no-scroll');
+    document.documentElement.style.setProperty('--additionalDelay', '0s');
+    preloadModal.style.opacity = '0';
+
+    setTimeout(() => {
+      preloadModal.remove();
+    }, 500);
     preloadModal.remove();
   }
 
   function handleClick() {
     heroImage.style.backgroundPositionX = 'right';
     heroRight.style.opacity = '0';
+    document.documentElement.style.setProperty('--additionalDelay', '0s');
 
     setTimeout(() => {
       heroRight.style.opacity = '1';

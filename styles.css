@@ -9,7 +9,7 @@
 body {
   margin: 0;
   font-family: Rubik, 'Open Sans', Helvetica, Arial, sans-serif;
-  background: url('/assets/bg_bottles_lg.jpg') center center;
+  background: url('/assets/bg_bottles_md.jpg') center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;

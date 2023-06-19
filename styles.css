@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;600&family=Rubik:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
 
 :root {
-  --additionalDelay: 2s;
+  --additionalDelay: 0s;
 }
 
 * {
@@ -129,7 +129,6 @@ h3 {
   font-family: Rubik, 'Open Sans', Helvetica, Arial, sans-serif;
   color: white;
   text-align: left;
-  cursor: pointer;
   transition: width 0.3s ease-in, background 0.1s ease-in;
   animation: longerButton 2s calc(var(--additionalDelay) + 4s);
 }
@@ -139,7 +138,7 @@ h3 {
   min-width: 60px;
   height: 20px;
   transition: min-width 0.3s ease-in;
-  animation: longerArrow 2s 6s;
+  animation: longerArrow 2s calc(var(--additionalDelay) + 4s);
 }
 
 @keyframes longerButton {

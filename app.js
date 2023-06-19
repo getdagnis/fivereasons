@@ -25,7 +25,6 @@ function letsBegin() {
       preloadModal.remove();
     }, 2000);
   } else {
-    document.documentElement.style.setProperty('--additionalDelay', '0s');
     document.body.classList.remove('no-scroll');
     preloadModal.remove();
   }

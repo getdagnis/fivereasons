@@ -1,7 +1,7 @@
 window.onload = letsBegin;
 
 function letsBegin() {
-  // const preloadModal = document.querySelector('.preload-modal');
+  const preloadModal = document.querySelector('.preload-modal');
   const heroButton = document.getElementById('hero-button');
   const heroImage = document.getElementById('hero-image');
   const heroRight = document.querySelector('.hero-right');
@@ -11,10 +11,24 @@ function letsBegin() {
   const heroTitleContent = `<span class="fade-down delay-1">Tastes fantastic.</span><br /><span class="fade-down delay-2">Backed by science.</span>`;
   const heroButtonContent = `Shop now <div class="button-arrow"><span class="button-arrow-head"></span></div>`;
 
-  // setTimeout(() => {
-  //   document.body.classList.remove('no-scroll');
-  //   preloadModal.remove();
-  // }, 2000);
+  if (localStorage.getItem('565') === null) {
+    document.documentElement.style.setProperty('--additionalDelay', '2s');
+    localStorage.setItem('visited', 'true');
+    preloadModal.style.visibility = 'visible';
+
+    setTimeout(() => {
+      document.body.classList.remove('no-scroll');
+      preloadModal.style.opacity = '0';
+    }, 1500);
+
+    setTimeout(() => {
+      preloadModal.remove();
+    }, 2000);
+  } else {
+    document.documentElement.style.setProperty('--additionalDelay', '0s');
+    document.body.classList.remove('no-scroll');
+    preloadModal.remove();
+  }
 
   function handleClick() {
     heroImage.style.backgroundPositionX = 'right';

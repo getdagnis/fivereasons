@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;600&family=Rubik:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
+
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  font-family: Rubik, 'Open Sans', Helvetica, Arial, sans-serif;
+  background: url('/assets/bg_bottles_lg.jpg') center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 300;
+  line-height: 1;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.wrapper {
+  max-width: 1440px;
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 0.5rem;
+}
+
+.header-container {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(201, 150, 197, 0.5);
+  overflow: hidden;
+  z-index: 99;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0.5rem;
+}
+
+.header a {
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  line-height: 2rem;
+  border-radius: 4px;
+  margin-left: 1.5rem;
+}
+
+.header-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.hero-image {
+  position: relative;
+  height: 95vh;
+  background-image: url('/assets/bg_double.jpg');
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: background-position 1s ease;
+}
+
+.hero-contents {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 0.5rem;
+  width: 50%;
+  height: 80%;
+  color: white;
+}
+
+.hero-right {
+  background-image: url('/assets/cut_brain_bliss.png');
+  background-position: 40% center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 50%;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+.hero-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid white;
+  width: 275px;
+  margin-top: 3rem;
+  padding: 1.25rem 2rem;
+  border-radius: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 300;
+  font-family: Rubik, 'Open Sans', Helvetica, Arial, sans-serif;
+  color: white;
+  text-align: left;
+  cursor: pointer;
+  transition: width 0.3s ease-in, background 0.1s ease-in;
+  animation: longerButton 2s 4s;
+}
+
+.button-arrow {
+  position: relative;
+  min-width: 60px;
+  height: 20px;
+  transition: min-width 0.3s ease-in;
+  animation: longerArrow 2s 4s;
+}
+
+@keyframes longerButton {
+  0% {
+    width: 275px;
+  }
+
+  30% {
+    width: 330px;
+  }
+
+  100% {
+    width: 275px;
+  }
+}
+
+@keyframes longerArrow {
+  0% {
+    width: 60px;
+  }
+
+  30% {
+    width: 120px;
+  }
+
+  100% {
+    width: 60px;
+  }
+}
+
+.hero-button:hover {
+  width: 350px;
+  background: rgba(0, 0, 0, 0.05);
+  animation: none;
+}
+
+.hero-button:hover > .button-arrow {
+  min-width: 40px;
+  transition: min-width 0.3s ease-in;
+  animation: none;
+}
+
+.button-arrow::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  background: white;
+}
+
+.button-arrow::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  height: 10px;
+  width: 10px;
+  border: 1px white;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: none;
+  border-left-style: none;
+  transform: rotate(45deg) translateY(-50%) translateY(-1px);
+}
+
+.empty-space {
+  height: 100vh;
+}
+
+.main-contents {
+  background-color: beige;
+}
+
+.info-image {
+  display: flex;
+}
+
+.info,
+.image-slider {
+  width: 50%;
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fade-down {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(-100%);
+  animation-name: fadeDown;
+  animation-duration: 0.9s;
+  animation-fill-mode: forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.3s;
+}
+
+.delay-2 {
+  animation-delay: 1.6s;
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .info-image {
+    flex-direction: column;
+  }
+  .info,
+  .image-slider {
+    width: 100%;
+  }
+}

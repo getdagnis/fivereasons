@@ -8,22 +8,22 @@ function letsBegin() {
   const header = document.querySelector('.header-container');
   const heroTitle = document.getElementById('hero-title');
 
-  if (sessionStorage.getItem('visited') === null) {
-    document.documentElement.style.setProperty('--additionalDelay', '3s');
+  if (sessionStorage.getItem('viadgfsited') === null) {
+    document.documentElement.style.setProperty('--additionalDelay', '5s');
     sessionStorage.setItem('visited', 'true');
     preloadModal.style.visibility = 'visible';
 
     setTimeout(() => {
       document.body.classList.remove('no-scroll');
       preloadModal.style.opacity = '0';
-    }, 1500);
+    }, 3500);
 
     setTimeout(() => {
       preloadModal.remove();
-    }, 2000);
+    }, 4000);
   } else {
     document.body.classList.remove('no-scroll');
-    document.documentElement.style.setProperty('--additionalDelay', '0s');
+    document.documentElement.style.setProperty('--additionalDelay', '-1s');
     preloadModal.style.opacity = '0';
 
     setTimeout(() => {

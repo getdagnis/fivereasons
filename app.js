@@ -11,8 +11,8 @@ function letsBegin() {
   const heroTitleContent = `<span class="fade-down delay-1">Tastes fantastic.</span><br /><span class="fade-down delay-2">Backed by science.</span>`;
   const heroButtonContent = `Shop now <div class="button-arrow"><span class="button-arrow-head"></span></div>`;
 
-  if (localStorage.getItem('565') === null) {
-    document.documentElement.style.setProperty('--additionalDelay', '2s');
+  if (localStorage.getItem('visited') === null) {
+    document.documentElement.style.setProperty('--additionalDelay', '3s');
     localStorage.setItem('visited', 'true');
     preloadModal.style.visibility = 'visible';
 

@@ -4,11 +4,11 @@ function letsBegin() {
   const preloadModal = document.querySelector('.preload-modal');
   const heroButton = document.getElementById('hero-button');
   const heroImage = document.getElementById('hero-image');
-  const heroRight = document.querySelector('.hero-right');
+  const heroRight = document.querySelector('.hero-contents');
   const header = document.querySelector('.header-container');
   const heroTitle = document.getElementById('hero-title');
 
-  if (sessionStorage.getItem('viadgfsited') === null) {
+  if (sessionStorage.getItem('visited') === null) {
     document.documentElement.style.setProperty('--additionalDelay', '5s');
     sessionStorage.setItem('visited', 'true');
     preloadModal.style.visibility = 'visible';
@@ -36,25 +36,25 @@ function letsBegin() {
   const currentSlideData = [
     {
       bgColor: 'rgba(201, 150, 197, 0.5)',
-      bgPos: 'center',
+      bgPos: '85% center',
       bgImg: "url('/assets/cut_brain_bliss.png')",
-      backgroundPositionX: 'left',
+      bgColorPosition: 'left',
       heroTitleContent: `<span class="fade-down delay-1">Fuel your body.</span><br /><span class="fade-down delay-2">Fuel your life.</span>`,
       heroButtonContent: `Learn more <div class="button-arrow"><span class="button-arrow-head"></span></div>`,
     },
     {
       bgColor: 'rgba(148, 183, 148, 0.5)',
-      bgPos: 'bottom',
+      bgPos: '95% bottom',
       bgImg: "url('/assets/cut_green.png')",
-      backgroundPositionX: 'right',
+      bgColorPosition: 'right',
       heroTitleContent: `<span class="fade-down delay-1">Tastes fantastic.</span><br /><span class="fade-down delay-2">Backed by science.</span>`,
       heroButtonContent: `Shop now <div class="button-arrow"><span class="button-arrow-head"></span></div>`,
     },
     {
       bgColor: 'rgba(148, 183, 148, 0.5)',
-      bgPos: 'bottom',
+      bgPos: '85% center',
       bgImg: "url('/assets/five_icon_600.png')",
-      backgroundPositionX: 'right',
+      bgColorPosition: 'right',
       heroTitleContent: `<span class="fade-down delay-1">Shop can open here.</span><br /><span class="fade-down delay-2">In a seperate page.</span>`,
       heroButtonContent: `Go back <div class="button-arrow"><span class="button-arrow-head"></span></div>`,
     },
@@ -69,7 +69,7 @@ function letsBegin() {
 
     document.documentElement.style.setProperty('--additionalDelay', '0s');
     heroRight.style.opacity = '0';
-    heroImage.style.backgroundPositionX = currentSlideData[currentSlide].backgroundPositionX;
+    heroImage.style.backgroundPositionX = currentSlideData[currentSlide].bgColorPosition;
 
     setTimeout(() => {
       heroRight.style.opacity = '1';

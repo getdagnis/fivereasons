@@ -15,16 +15,16 @@
         <div class="header">
           <img width="140px" src="assets/logo.svg" />
           <nav class="header-right">
-            <a class="active" href="#shop">Shop Now</a>
-            <a href="#menu"> <img width="20px" src="assets/hamburger.svg" /> </a>
+            <a class="header-link" href="#shop">Shop Now</a>
+            <a class="hamburger" href="#menu"> <img width="20px" src="assets/hamburger.svg" /> </a>
           </nav>
         </div>
       </div>
     </header>
 
     <section id="hero-image" class="hero-image">
-      <div class="wrapper">
-        <div class="hero-contents">
+      <div class="hero-contents">
+        <div class="wrapper">
           <div class="hero-left">
             <h1 id="hero-title">
               <span class="fade-down delay-1">Fuel your body.</span><br />
@@ -39,7 +39,6 @@
               <div class="button-arrow"><span class="button-arrow-head"></span></div>
             </button>
           </div>
-          <div class="hero-right"></div>
         </div>
       </div>
     </section>
@@ -75,30 +74,65 @@
         </div>
       </section>
       <section class="info-section info-section-3">
-        <h2>Not yet developed sections</h2>
-        <ul>
-          <li>Other sections</li>
-          <li>Other sections</li>
-          <li>Other sections</li>
-          <li>Other sections</li>
-          <li>Other sections</li>
-          <li>Other sections</li>
-          <li>Other sections</li>
-          <li>Other sections</li>
-        </ul>
-        <h2>All kinds of sections</h2>
-        <ul>
-          <li>Other sections</li>
-          <li>Other sections</li>
-          <li>Other sections</li>
-          <li>Other sections</li>
-          <li>Other sections</li>
-          <li>Other sections</li>
-          <li>Other sections</li>
-          <li>Other sections</li>
-        </ul>
+        <div class="wrapper">
+          <h2>Not yet developed sections</h2>
+          <ul>
+            <li>Other sections</li>
+            <li>Other sections</li>
+            <li>Other sections</li>
+            <li>Other sections</li>
+            <li>Other sections</li>
+            <li>Other sections</li>
+            <li>Other sections</li>
+            <li>Other sections</li>
+          </ul>
+          <h2>All kinds of sections</h2>
+          <ul>
+            <li>Other sections</li>
+            <li>Other sections</li>
+            <li>Other sections</li>
+            <li>Other sections</li>
+            <li>Other sections</li>
+            <li>Other sections</li>
+            <li>Other sections</li>
+            <li>Other sections</li>
+          </ul>
+          <h2>Testimonials</h2>
+          <div class="testimonials">
+            <div class="testimonial">
+              <p>"Lorem ipsum dolor sit amet..."</p>
+              <p>- Person 1</p>
+            </div>
+            <div class="testimonial">
+              <p>"Lorem ipsum dolor sit amet..."</p>
+              <p>- Person 2</p>
+            </div>
+          </div>
+          <div class="features">
+            <div class="feature">
+              <h3>Some more benefits</h3>
+              <p>Lorem ipsum dolor sit amet...</p>
+            </div>
+            <div class="feature">
+              <h3>Other benefit</h3>
+              <p>Lorem ipsum dolor sit amet...</p>
+            </div>
+            <div class="cta">
+              <h2>Ready to get started?</h2>
+              <button class="cta-btn">Sign up now</button>
+            </div>
+          </div>
+        </div>
       </section>
     </section>
+    <footer>
+      <div class="wrapper">
+        <div class="footer-content">
+          <h4>Here be footer</h4>
+          <div class="footer-bottom">&copy; 2023 Smoothie Delight, Inc. | All rights reserved</div>
+        </div>
+      </div>
+    </footer>
 
     <div class="preload-modal">
       <svg width="40px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
@@ -114,5 +148,42 @@
         <circle class="a" cx="40.2" cy="40.4" r="7.8" />
       </svg>
     </div>
+    <!-- Code injected by live-server -->
+    <script>
+      // <![CDATA[  <-- For SVG support
+      if ('WebSocket' in window) {
+        (function () {
+          function refreshCSS() {
+            var sheets = [].slice.call(document.getElementsByTagName('link'));
+            var head = document.getElementsByTagName('head')[0];
+            for (var i = 0; i < sheets.length; ++i) {
+              var elem = sheets[i];
+              var parent = elem.parentElement || head;
+              parent.removeChild(elem);
+              var rel = elem.rel;
+              if ((elem.href && typeof rel != 'string') || rel.length == 0 || rel.toLowerCase() == 'stylesheet') {
+                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + new Date().valueOf();
+              }
+              parent.appendChild(elem);
+            }
+          }
+          var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+          var address = protocol + window.location.host + window.location.pathname + '/ws';
+          var socket = new WebSocket(address);
+          socket.onmessage = function (msg) {
+            if (msg.data == 'reload') window.location.reload();
+            else if (msg.data == 'refreshcss') refreshCSS();
+          };
+          if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+            console.log('Live reload enabled.');
+            sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+          }
+        })();
+      } else {
+        console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+      }
+      // ]]>
+    </script>
   </body>
 </html>

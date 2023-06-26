@@ -233,7 +233,7 @@ h4 {
 
 .preload-modal {
   position: absolute;
-  visibility: hidden;
+  visibility: visible;
   display: grid;
   place-content: center;
   top: 0;

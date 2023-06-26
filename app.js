@@ -7,6 +7,7 @@ function letsBegin() {
   const heroRight = document.querySelector('.hero-contents');
   const header = document.querySelector('.header-container');
   const heroTitle = document.getElementById('hero-title');
+  const mainLogo = document.getElementById('main-logo');
 
   if (sessionStorage.getItem('visited') === null) {
     document.documentElement.style.setProperty('--additionalDelay', '5s');
